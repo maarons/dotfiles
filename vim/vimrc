@@ -63,8 +63,6 @@ set undolevels=1000
 set ruler
 " show partialy written commands
 set showcmd
-" put coursor on the begining on start (instead of last edited position)
-"let g:leave_my_cursor_position_alone=1
 " wrap text to 80 characters, don't auto break lines
 set textwidth=80
 autocmd FileType * setlocal formatoptions-=t
@@ -93,6 +91,8 @@ autocmd FileType eruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType python runtime indent/python.vim
 " set default indentation to 2 spaces for javascript files
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
+" auto break git commit message lines at 72 characters
+autocmd FileType gitcommit setlocal textwidth=72 formatoptions+=t
 
 " set keys for FuzzyFinder
 nnoremap <Leader>fb <Esc>:FufBuffer<CR>
