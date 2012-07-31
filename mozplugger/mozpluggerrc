@@ -1,0 +1,23 @@
+# mozpluggerrc
+# The author disclaims copyright to this source code. It is placed in
+# the public domain. In case this is not legally possible I grant anyone
+# the right to use it for any purpose, without any conditions, unless
+# such conditions are required by law.
+
+application/pdf:pdf:PDF file
+application/x-pdf:pdf:PDF file
+application/x-bzpdf:pdf:PDF file
+application/x-gzpdf:pdf:PDF file
+application/x-dvi:dvi:DVI file
+application/postscript:ps:PS file
+application/x-postscript:ps:PS file
+	noisy repeat swallow(evince) fill: evince "$file"
+
+application/vnd.oasis.opendocument.text:odt:ODT file
+	noisy swallow(VCLSalFrame) fill: lowriter -nologo -norestore -view "$file"
+
+application/vnd.oasis.opendocument.presentation:odp:ODP file
+	noisy swallow(VCLSalFrame) fill: loimpress -nologo -norestore -view "$file"
+
+application/vnd.oasis.opendocument.spreadsheet:ods:ODS file
+	noisy swallow(VCLSalFrame) fill: localc -nologo -norestore -view "$file"

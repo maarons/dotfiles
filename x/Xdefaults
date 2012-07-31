@@ -1,0 +1,33 @@
+! Xdefaults
+! The author disclaims copyright to this source code. It is placed in
+! the public domain. In case this is not legally possible I grant anyone
+! the right to use it for any purpose, without any conditions, unless
+! such conditions are required by law.
+
+! Make fonts pretty
+! https://wiki.archlinux.org/index.php/Font_Configuration#Applications_without_fontconfig_support
+Xft.autohint: false
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: true
+Xft.antialias: true
+Xft.rgba: rgb
+
+! Set a nice font
+urxvt.font: xft:Droid Sans Mono:size=11
+! Do not show scrollbar
+urxvt.scrollBar: false
+! Set dark background colour
+urxvt.background: black
+urxvt.foreground: white
+! Set visible cursor colour
+urxvt.cursorColor: white
+! Make blue colour a little lighter
+urxvt.color4: #55f
+urxvt.color12: #88f
+! Remember more lines
+urxvt.saveLines: 1000
+! Don't scroll on tty output
+urxvt.scrollTtyOutput: false
+urxvt.scrollWithBuffer: true
+urxvt.scrollTtyKeypress: true

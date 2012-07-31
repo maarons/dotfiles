@@ -1,0 +1,109 @@
+" vimrc
+" The author disclaims copyright to this source code. It is placed in
+" the public domain. In case this is not legally possible I grant anyone
+" the right to use it for any purpose, without any conditions, unless
+" such conditions are required by law.
+
+" use vim defaults instead of vi ones
+set nocompatible
+
+" enable pathogen and load plugins from ~/.vim/bundle
+call pathogen#helptags()
+call pathogen#infect()
+
+" avoid unexpected switches to 256 colours in some terminals (xterm, urxvt)
+set term=screen
+" turn syntax highlight on
+syntax on
+" use light colours
+set background=dark
+" directory for swap files
+set directory=~/.vim/tmp
+" directory for backup files
+set backupdir=~/.vim/tmp
+" always backup files, don't delete backups after a successful write
+set backup
+set writebackup
+" fold blocks with the same indentation
+set foldmethod=indent
+" hide unused buffers instead of closing
+set hidden
+" enable file type detection
+filetype on
+" disable file type dependent auto indent
+filetype indent off
+" enable file type dependent general configuration
+filetype plugin on
+" keep indentation
+set autoindent
+" use whatever characters were used for indenting previous line
+set copyindent
+" <Tab> counts for 8 spaces
+set tabstop=8
+" 4 spaces for one step of autoindent
+set shiftwidth=4
+" delete 4 spaces with one backspace
+set softtabstop=4
+" use spaces instead of tab characters
+set expandtab
+" don't wrap lines
+set nowrap
+" ignore case of typed search text only if typed using only small letters
+set ignorecase
+set smartcase
+" search as you type
+set incsearch
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+" heep 1000 lines of command history
+set history=1000
+" heep 1000 levels of undo
+set undolevels=1000
+" show coursor position all the time
+set ruler
+" show partialy written commands
+set showcmd
+" put coursor on the begining on start (instead of last edited position)
+"let g:leave_my_cursor_position_alone=1
+" wrap text to 80 characters, don't auto break lines
+set textwidth=80
+autocmd FileType * setlocal formatoptions-=t
+autocmd FileType * setlocal formatoptions-=c
+" set file encoding
+set encoding=utf-8
+" zsh like completion for commands like :edit
+set wildmode=list:longest
+" highlight tabs and trailing spaces
+set listchars=tab:>-,trail:-
+set list
+" search highlight with custom colour (more visible than default)
+set hlsearch
+hi search ctermfg=cyan ctermbg=blue
+" disable viminfo
+set viminfo=
+" make omnicompletion popup show most matching strings
+set completeopt=longest,menuone
+
+" enable indentation for Ruby files
+autocmd FileType ruby source ~/.vim/bundle/ruby/indent/ruby.vim
+autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType eruby source ~/.vim/bundle/ruby/indent/eruby.vim
+autocmd FileType eruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
+" enable indentation for Python files
+autocmd FileType python runtime indent/python.vim
+" set default indentation to 2 spaces for javascript files
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
+" set keys for FuzzyFinder
+nnoremap <Leader>fb <Esc>:FufBuffer<CR>
+nnoremap <Leader>ff <Esc>:FufFile<CR>
+nnoremap <Leader>fl <Esc>:FufLine<CR>
+
+" delete trailing spaces
+nnoremap <F1> :%s/\s\+$//e<CR>
+" set indent to two spaces
+nnoremap <F2> :setlocal tabstop=2<CR>:set shiftwidth=2<CR>:set softtabstop=2<CR>
+" set indent to four spaces
+nnoremap <F3> :setlocal tabstop=4<CR>:set shiftwidth=4<CR>:set softtabstop=4<CR>
+" show undo history
+nnoremap <F5> :GundoToggle<CR>

@@ -1,0 +1,15 @@
+Config
+    { font = "xft:DejaVu Sans-10"
+    , fgColor = "white"
+    , bgColor = "black"
+    , position = TopSize L 100 20
+    , commands =
+        [ Run Date "%m/%d/%Y %H:%M" "date" 10
+        , Run Memory ["-t", "Mem: <used>/<total>M"] 50
+        , Run Swap ["-t" , "Swap: <used>/<total>M"] 50
+        , Run Battery ["-t", "Batt: <left>%"] 50
+        , Run Com "uptime | sed -e 's/^.*load average: //' -e 's/,//g'" [] "cpuload" 50
+        , Run StdinReader
+        ]
+    , template = "%StdinReader% }{ Cpu: %cpuload% | %memory% | %swap% | %battery% | <fc=yellow,black>%date%</fc>"
+    }

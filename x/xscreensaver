@@ -1,0 +1,25 @@
+# xscreensaver
+# The author disclaims copyright to this source code. It is placed in
+# the public domain. In case this is not legally possible I grant anyone
+# the right to use it for any purpose, without any conditions, unless
+# such conditions are required by law.
+
+timeout: 5
+cycle: 0
+lock: False
+
+dpmsEnabled: True
+dpmsStandby: 10
+dpmsSuspend: 10
+dpmsOff: 30
+
+splash: False
+nice: 19
+fade: True
+unfade: True
+captureStderr: False
+
+mode: one
+selected: 0
+programs: \
+  GL: glmatrix -root

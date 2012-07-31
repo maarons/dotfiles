@@ -1,0 +1,7 @@
+emacs/tmp/*
+vim/tmp/*
+vim/.netrwhist
+x/xmonad/xmonad.errors
+x/xmonad/xmonad.h1
+x/xmonad/xmonad.o
+x/xmonad/xmonad-x86_64-linux

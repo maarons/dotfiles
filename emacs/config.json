@@ -1,0 +1,7 @@
+{
+  "symlinks" : { "." : ".emacs_conf",
+                 "tmp" : ".emacs_tmp",
+                 "emacs" : ".emacs" },
+  "chmod" : { "tmp" : "700" },
+  "maintenance" : [ "git gc --aggressive" ]
+}
