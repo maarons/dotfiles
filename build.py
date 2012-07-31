@@ -11,7 +11,15 @@ import argparse
 import json
 import os
 import sys
-from os.path import abspath, expanduser, islink, exists, lexists, realpath
+from os.path import (
+    abspath,
+    expanduser,
+    islink,
+    exists,
+    lexists,
+    realpath,
+    dirname
+)
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
@@ -41,6 +49,20 @@ def sym_link(target, source):
         else:
             os.symlink(source, target)
 
+def mkdir(target):
+    if args.clean:
+        empty = True
+        while empty:
+            try:
+                os.rmdir(target)
+                # Go one dir up and clean again.
+                target = dirname(target)
+            except:
+                empty = False
+    else:
+        if not exists(target):
+            os.makedirs(target)
+
 try:
     with open('config.json') as c:
         conf = json.load(c)
@@ -51,27 +73,37 @@ except:
     )
     sys.exit(1)
 
-if 'mkdir' in conf:
-    for path in conf['mkdir']:
-        path = abspath(expanduser(path))
-        if not exists(path):
-            os.makedirs(path)
+def do_mkdir():
+    if 'mkdir' in conf:
+        for path in conf['mkdir']:
+            path = abspath(expanduser(path))
+            mkdir(path)
 
-if 'chmod' in conf:
-    for path in conf['chmod']:
-        mod = int(conf['chmod'][path], 8)
-        path = abspath(expanduser(path))
-        os.chmod(path, mod)
+def do_chmod():
+    if 'chmod' in conf:
+        for path in conf['chmod']:
+            mod = int(conf['chmod'][path], 8)
+            path = abspath(expanduser(path))
+            os.chmod(path, mod)
 
-if 'symlink' in conf:
-    for source in conf['symlink']:
-        source_path = abspath(expanduser(source))
-        targets = conf['symlink'][source]
-        if not isinstance(targets, list):
-            targets = [targets]
-        for target in targets:
-            target_path = abspath(expanduser(target))
-            sym_link(target_path, source_path)
+def do_symlink():
+    if 'symlink' in conf:
+        for source in conf['symlink']:
+            source_path = abspath(expanduser(source))
+            targets = conf['symlink'][source]
+            if not isinstance(targets, list):
+                targets = [targets]
+            for target in targets:
+                target_path = abspath(expanduser(target))
+                sym_link(target_path, source_path)
+
+if args.clean:
+    do_symlink()
+    do_mkdir()
+else:
+    do_mkdir()
+    do_chmod()
+    do_symlink()
 
 if skipped:
     if args.clean:
