@@ -7,3 +7,11 @@
 (add-hook 'html-mode-hook
   '(lambda()
      (setq truncate-lines t))) ;; don't wrap long lines
+
+(defun hamlet-setup ()
+  "Enable some stuff useful for hamlet files."
+  (longlines-mode)
+  (longlines-show-hard-newlines)
+  (flyspell-mode)
+  (ispell-change-dictionary "en_GB")
+  (flyspell-buffer))
