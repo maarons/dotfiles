@@ -227,7 +227,7 @@ myManageHook = composeAll
     [ isSplash --> doIgnore
     -- Don't tile notifications.
     , isNotification --> doIgnore
-    -- Float VLC, Gimp and Wine windows.
+    -- Float VLC and Wine windows.
     , className =? "Vlc" --> doFloat
     , className =? "Wine" --> doFloat
     ]
