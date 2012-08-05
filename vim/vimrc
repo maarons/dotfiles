@@ -84,13 +84,13 @@ set completeopt=longest,menuone
 
 " enable indentation for Ruby files
 autocmd FileType ruby source ~/.vim/bundle/ruby/indent/ruby.vim
-autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2
 autocmd FileType eruby source ~/.vim/bundle/ruby/indent/eruby.vim
-autocmd FileType eruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType eruby setlocal shiftwidth=2 softtabstop=2
 " enable indentation for Python files
 autocmd FileType python runtime indent/python.vim
 " set default indentation to 2 spaces for javascript files
-autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2
 " auto break git commit message lines at 72 characters, also turn on spell
 " checking by default
 autocmd FileType gitcommit setlocal textwidth=72 formatoptions+=t spell spelllang=en_gb
@@ -103,8 +103,8 @@ nnoremap <Leader>fl <Esc>:FufLine<CR>
 " delete trailing spaces
 nnoremap <F1> :%s/\s\+$//e<CR>
 " set indent to two spaces
-nnoremap <F2> :setlocal tabstop=2<CR>:set shiftwidth=2<CR>:set softtabstop=2<CR>
+nnoremap <F2> :setlocal shiftwidth=2<CR>:setlocal softtabstop=2<CR>
 " set indent to four spaces
-nnoremap <F3> :setlocal tabstop=4<CR>:set shiftwidth=4<CR>:set softtabstop=4<CR>
+nnoremap <F3> :setlocal shiftwidth=4<CR>:setlocal softtabstop=4<CR>
 " show undo history
 nnoremap <F5> :GundoToggle<CR>
