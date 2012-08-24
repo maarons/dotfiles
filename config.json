@@ -19,6 +19,7 @@
     "ruby/irbrc": "~/.irbrc",
     "x/Xdefaults": "~/.Xdefaults",
     "x/xscreensaver": "~/.xscreensaver",
+    "x/XCompose": "~/.XCompose",
     "zsh/zshrc": [
       "~/.zshrc",
       "~/.zprofile"

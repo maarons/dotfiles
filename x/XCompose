@@ -1,0 +1,11 @@
+# XCompose
+# The author disclaims copyright to this source code. It is placed in
+# the public domain. In case this is not legally possible I grant anyone
+# the right to use it for any purpose, without any conditions, unless
+# such conditions are required by law.
+
+include "/usr/share/X11/locale/en_US.UTF-8/Compose"
+
+<Multi_key> <minus> <period> <period> 	: "‐"   U2010 # Hyphen
+<Multi_key> <minus> <0> <0> 		: "‒"   U2012 # Figure dash
+<Multi_key> <minus> <equal> <equal> 	: "―"   U2015 # Horizontal bar
