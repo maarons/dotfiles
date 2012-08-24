@@ -8,7 +8,7 @@ run()
         killall "$1"
     fi
     if [[ "$stage" = "after" ]]; then
-        nohup "$1" &> /dev/null &
+        nohup "$@" &> /dev/null &
     fi
 }
 
@@ -20,7 +20,7 @@ stop()
 }
 
 run gnome-do
-run nm-applet
+run wicd-client --tray
 run bluetooth-applet
 run parcellite
 run xscreensaver
