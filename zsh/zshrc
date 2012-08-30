@@ -76,6 +76,9 @@ export SDL_AUDIODRIVER=pulse
 export PATH=${PATH}:/sbin
 export PATH=${PATH}:/usr/sbin
 
+# Force Chrome to use KWallet for storing passwords.
+export CHROMIUM_USER_FLAGS="--password-store=kwallet"
+
 # Set GNU Screen/urxvt title to #{LAST_CMD}.
 function title () {
     title=$(print -Pn "%~:%30>...>${LAST_CMD}" | tr -d "\n")
