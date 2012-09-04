@@ -2,7 +2,7 @@ Config
     { font = "xft:DejaVu Sans-10"
     , fgColor = "white"
     , bgColor = "black"
-    , position = Top L 100
+    , position = TopSize L 100 20
     , commands =
         [ Run Date "%m/%d/%Y %H:%M" "date" 10
         , Run Memory ["-t", "Mem: <used>/<total>M"] 50

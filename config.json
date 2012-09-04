@@ -1,7 +1,6 @@
 {
   "mkdir": [
-    "~/.config/gtk-3.0",
-    "~/.config/tint2"
+    "~/.config/gtk-3.0"
   ],
   "chmod": {
     "emacs/tmp": "0700",
@@ -31,7 +30,6 @@
     "vim/vimrc": "~/.vimrc",
     "vim/gvimrc": "~/.gvimrc",
     "x/xmonad/": "~/.xmonad",
-    "x/xmobarrc": "~/.xmobarrc",
-    "x/tint2rc": "~/.config/tint2/tint2rc"
+    "x/xmobarrc": "~/.xmobarrc"
   }
 }

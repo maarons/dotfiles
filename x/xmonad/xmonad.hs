@@ -1,3 +1,6 @@
+{-# LANGUAGE TypeSynonymInstances, MultiParamTypeClasses, DeriveDataTypeable #-}
+-- Needed by MultiToggle.
+
 import XMonad
 import Data.Char
 import Data.List
@@ -21,6 +24,25 @@ import XMonad.Hooks.ManageDocks
     )
 import XMonad.Layout.NoBorders
     ( smartBorders
+    )
+import XMonad.Layout.Tabbed
+    ( simpleTabbed
+    )
+import XMonad.Layout.FixedColumn
+    ( FixedColumn (FixedColumn)
+    )
+import XMonad.Layout.Magnifier
+    ( magnifier'
+    )
+import XMonad.Layout.MultiToggle
+    ( Transformer
+    , transform
+    , mkToggle
+    , single
+    , Toggle (Toggle)
+    )
+import XMonad.Layout.LayoutModifier
+    ( ModifiedLayout (ModifiedLayout)
     )
 import XMonad.Hooks.EwmhDesktops
     ( ewmhDesktopsLogHook
@@ -63,6 +85,10 @@ import XMonad.Util.WorkspaceCompare
 import qualified XMonad.StackSet as W
 import XMonad.Util.EZConfig
 
+data MAGNIFY = MAGNIFY deriving (Read, Show, Eq, Typeable)
+instance Transformer MAGNIFY Window where
+      transform _ x k = k (magnifier' x) (\(ModifiedLayout _ x) -> x)
+
 main = do
     -- List of displays as numbers ([1..]).
     displays <- getDisplays :: IO [Int]
@@ -78,15 +104,14 @@ main = do
         -- Get more workspaces.
         , workspaces = myWorkspaces
 
-        -- manageDocks and avoidStruts make XMonad play nicely with panels.
-        -- smartBorders won't display borders around full screen windows, etc.
+        -- manageDocks makes XMonad play nicely with panels.
         , manageHook = mconcat
             [ manageDocks
             -- Special treatment for some software.
             , myManageHook
             , manageHook defaultConfig
             ]
-        , layoutHook = avoidStruts $ smartBorders $ layoutHook defaultConfig
+        , layoutHook = myLayoutHook
 
         , logHook = mconcat
             -- Update xmobar on every action.
@@ -115,6 +140,15 @@ main = do
         -- Use custom key bindings.
         , keys = myKeys
         }
+
+-- avoidStruts will leave space for panels.
+-- smartBorders won't display borders around full screen windows, etc.
+myLayoutHook = avoidStruts $ smartBorders
+    -- 1 window in the master pane, resize by 20 columns, master pane is 80
+    -- columns wide, 10 is used as column width if it can't be detected.
+    (   mkToggle (single MAGNIFY) (FixedColumn 1 20 80 10)
+    ||| simpleTabbed
+    )
 
 -- Use 12 workspaces.
 myWorkspaces = map show [1..12]
@@ -149,6 +183,9 @@ appKeys =
 
     -- Display lock.
     , ((0, xF86XK_Sleep), safeSpawn "shade" ["--sleep", "lock"])
+
+    -- Show/hide app tray.
+    , ((modKey, xK_r), unsafeSpawn "~/.xmonad/scripts/tray-toggle.sh")
     ]
 
 launchKeys conf =
@@ -158,6 +195,7 @@ launchKeys conf =
 
 layoutKeys =
     [ ((modKey, xK_n), sendMessage NextLayout)
+    , ((modKey, xK_b), sendMessage $ Toggle MAGNIFY)
     ]
 
 focusKeys =

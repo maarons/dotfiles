@@ -24,7 +24,6 @@ run wicd-client --tray
 run bluetooth-applet
 run parcellite
 run xscreensaver
-run tint2
 run kwalletmanager
 stop xmobar
 
