@@ -21,7 +21,7 @@ stop()
 
 run gnome-do
 run wicd-client --tray
-run bluetooth-applet
+run blueman-applet
 run parcellite
 run xscreensaver
 run kwalletmanager
