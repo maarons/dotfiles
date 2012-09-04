@@ -1,89 +1,33 @@
 {-# LANGUAGE TypeSynonymInstances, MultiParamTypeClasses, DeriveDataTypeable #-}
 -- Needed by MultiToggle.
 
-import XMonad
+import Control.Monad
 import Data.Char
 import Data.List
 import Data.Monoid
-import qualified Data.Map as M
-import Control.Monad
 import System.Exit
+import qualified Data.Map as M
 
-import Graphics.X11.Xinerama
-    ( getScreenInfo
-    )
-import Graphics.X11.Xlib
-    ( openDisplay
-    , closeDisplay
-    )
 import Graphics.X11.ExtraTypes
+import Graphics.X11.Xinerama
+import Graphics.X11.Xlib
 
-import XMonad.Hooks.ManageDocks
-    ( manageDocks
-    , avoidStruts
-    )
-import XMonad.Layout.NoBorders
-    ( smartBorders
-    )
-import XMonad.Layout.Tabbed
-    ( simpleTabbed
-    )
-import XMonad.Layout.FixedColumn
-    ( FixedColumn (FixedColumn)
-    )
-import XMonad.Layout.Magnifier
-    ( magnifier'
-    )
-import XMonad.Layout.MultiToggle
-    ( Transformer
-    , transform
-    , mkToggle
-    , single
-    , Toggle (Toggle)
-    )
-import XMonad.Layout.LayoutModifier
-    ( ModifiedLayout (ModifiedLayout)
-    )
-import XMonad.Hooks.EwmhDesktops
-    ( ewmhDesktopsLogHook
-    , ewmhDesktopsEventHook
-    , ewmhDesktopsStartup
-    , fullscreenEventHook
-    )
-import XMonad.Util.Run
-    ( spawnPipe
-    , safeSpawn
-    , unsafeSpawn
-    , hPutStrLn
-    )
-import XMonad.Hooks.ManageHelpers
-    ( isInProperty
-    )
+import XMonad
+import XMonad.Actions.CycleRecentWS
 import XMonad.Hooks.DynamicLog
-    ( dynamicLogWithPP
-    , defaultPP
-    , ppOutput
-    , ppCurrent
-    , ppVisible
-    , ppHidden
-    , ppHiddenNoWindows
-    , ppUrgent
-    , ppSep
-    , ppWsSep
-    , ppTitle
-    , ppLayout
-    , ppOrder
-    , ppSort
-    , ppExtras
-    , wrap
-    , trim
-    , xmobarColor
-    )
-import XMonad.Util.WorkspaceCompare
-    ( getSortByXineramaPhysicalRule
-    )
-import qualified XMonad.StackSet as W
+import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
+import XMonad.Layout.FixedColumn
+import XMonad.Layout.LayoutModifier
+import XMonad.Layout.Magnifier hiding (Toggle)
+import XMonad.Layout.MultiToggle
+import XMonad.Layout.NoBorders
+import XMonad.Layout.Tabbed
 import XMonad.Util.EZConfig
+import XMonad.Util.Run
+import XMonad.Util.WorkspaceCompare
+import qualified XMonad.StackSet as W
 
 data MAGNIFY = MAGNIFY deriving (Read, Show, Eq, Typeable)
 instance Transformer MAGNIFY Window where
@@ -252,6 +196,8 @@ workspaceKeys =
     ] ++
     [ ((modKey .|. shiftMask, fKey), windows $ W.shift wSpace)
     | (wSpace, fKey) <- zip myWorkspaces [xK_F1..xK_F12]
+    ] ++
+    [ ((modKey, xK_Tab), cycleRecentWS [xK_Super_L] xK_Tab xK_grave)
     ]
 
 getDisplays = do
