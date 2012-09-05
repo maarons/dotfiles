@@ -1,0 +1,19 @@
+# zshenv
+# The author disclaims copyright to this source code. It is placed in
+# the public domain. In case this is not legally possible I grant anyone
+# the right to use it for any purpose, without any conditions, unless
+# such conditions are required by law.
+
+export EDITOR='/usr/bin/vim'
+export PAGER='/usr/bin/less'
+
+export LANG='en_GB.UTF-8'
+
+# SDL should use Pulse Audio.
+export SDL_AUDIODRIVER=pulse
+
+export PATH=${PATH}:/sbin
+export PATH=${PATH}:/usr/sbin
+
+# Force Chrome to use KWallet for storing passwords.
+export CHROMIUM_USER_FLAGS="--password-store=kwallet"

@@ -23,6 +23,7 @@
       "~/.zshrc",
       "~/.zprofile"
     ],
+    "zsh/zshenv": "~/.zshenv",
     "emacs/": "~/.emacs_conf",
     "emacs/tmp/": "~/.emacs_tmp",
     "emacs/emacs": "~/.emacs",
