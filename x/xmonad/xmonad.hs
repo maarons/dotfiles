@@ -130,6 +130,23 @@ appKeys =
 
     -- Show/hide app tray.
     , ((modKey, xK_r), unsafeSpawn "~/.xmonad/scripts/tray-toggle.sh")
+
+    -- Show app launcher.
+    , ((modKey, xK_space), safeSpawn "dmenu_run"
+        [ "-l"
+        , "10"
+        , "-i"
+        , "-fn"
+        , "DejaVu Sans-10"
+        , "-nb"
+        , "#333"
+        , "-nf"
+        , "white"
+        , "-sb"
+        , "#555"
+        , "-sf"
+        , "white"
+        ])
     ]
 
 launchKeys conf =

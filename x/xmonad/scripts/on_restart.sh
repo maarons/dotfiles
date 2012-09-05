@@ -19,7 +19,6 @@ stop()
     fi
 }
 
-run gnome-do
 run wicd-client --tray
 run blueman-applet
 run parcellite
