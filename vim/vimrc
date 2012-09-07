@@ -36,7 +36,7 @@ filetype indent off
 filetype plugin on
 " keep indentation
 set autoindent
-" use whatever characters were used for indenting previous line
+" use whatever characters were used for indenting the previous line
 set copyindent
 " <Tab> counts for 8 spaces
 set tabstop=8
@@ -46,6 +46,8 @@ set shiftwidth=4
 set softtabstop=4
 " use spaces instead of tab characters
 set expandtab
+" don't move the cursor to beginning of the line after a buffer change
+set nostartofline
 " don't wrap lines
 set nowrap
 " ignore case of typed search text only if typed using only small letters
