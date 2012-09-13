@@ -11,5 +11,5 @@ Config
         , Run Com "uptime | sed -e 's/^.*load average: //' -e 's/,//g'" [] "cpuload" 50
         , Run StdinReader
         ]
-    , template = "%StdinReader% }{ Cpu: %cpuload% | %memory% | %swap% | %battery% | <fc=yellow,black>%date%</fc>"
+    , template = "%StdinReader% }{ | Cpu: %cpuload% | %memory% | %swap% | %battery% | <fc=yellow,black>%date%</fc>"
     }

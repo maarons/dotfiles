@@ -67,7 +67,7 @@ setopt extended_glob
 
 # Set GNU Screen/urxvt title to #{LAST_CMD}.
 function title () {
-    title=$(print -Pn "%~:%30>...>${LAST_CMD}" | tr -d "\n")
+    title=$(print -Pn "%~:${LAST_CMD}" | tr -d "\n")
     case ${TERM} in
     screen)
         print -Pn "\ek${title}\e\\"
