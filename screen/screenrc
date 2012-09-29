@@ -6,7 +6,11 @@
 
 vbell off
 defscrollback 10000
-escape ^Oo # C-a conflicts with GNU Readline, change it to C-o
+# C-a conflicts with GNU Readline, change it to C-o.
+escape ^Oo
 startup_message off
 hardstatus string "[screen %n: %t]"
-zombie # Close window as soon as process inside ends.
+# Close window as soon as process inside ends.
+zombie
+# Just use the $SHELL, don't start it as a login shell.
+shell $SHELL
