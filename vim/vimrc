@@ -98,6 +98,8 @@ autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2
 autocmd FileType gitcommit setlocal textwidth=72 formatoptions+=t spell spelllang=en_gb
 " turn on spell checking by default
 autocmd FileType markdown setlocal spell spelllang=en_gb
+" .md files are markdown files, not modula2
+autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 " set keys for FuzzyFinder
 nnoremap <Leader>fb <Esc>:FufBuffer<CR>
