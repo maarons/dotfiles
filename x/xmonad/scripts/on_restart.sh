@@ -28,4 +28,6 @@ stop xmobar
 
 if [[ "$stage" = "after" ]]; then
     ~/.xmonad/scripts/setbg.sh
+    # Make the arrow cursor default instead of the "X" one.
+    xsetroot -cursor_name left_ptr
 fi

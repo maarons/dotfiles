@@ -19,6 +19,7 @@
     "x/Xdefaults": "~/.Xdefaults",
     "x/xscreensaver": "~/.xscreensaver",
     "x/XCompose": "~/.XCompose",
+    "x/xsession": "~/.xsession",
     "zsh/zshrc": [
       "~/.zshrc",
       "~/.zprofile"
