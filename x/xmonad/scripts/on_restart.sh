@@ -19,11 +19,9 @@ stop()
     fi
 }
 
-run wicd-client --tray
-run blueman-applet
+run nm-applet
 run parcellite
 run xscreensaver
-run kwalletmanager
 stop xmobar
 
 if [[ "$stage" = "after" ]]; then
