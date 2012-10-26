@@ -24,6 +24,7 @@ import XMonad.Layout.Magnifier hiding (Toggle)
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Tabbed
+import XMonad.Layout
 import XMonad.Util.EZConfig
 import XMonad.Util.Run
 import XMonad.Util.WorkspaceCompare
@@ -91,6 +92,7 @@ myLayoutHook = avoidStruts $ smartBorders
     -- 1 window in the master pane, resize by 20 columns, master pane is 80
     -- columns wide, 10 is used as column width if it can't be detected.
     (   mkToggle (single MAGNIFY) (FixedColumn 1 20 80 10)
+    ||| Tall 1 0.03 0.5
     ||| simpleTabbed
     )
 
