@@ -16,8 +16,9 @@ export SDL_AUDIODRIVER=pulse
 export PATH=${PATH}:/sbin
 export PATH=${PATH}:/usr/sbin
 
-# Force Chrome to use KWallet for storing passwords.
-export CHROMIUM_USER_FLAGS="--password-store=kwallet"
+# Force Chrome to use KWallet for storing passwords.  And allow all plugins
+# without warnings.
+export CHROMIUM_USER_FLAGS="--password-store=kwallet --allow-outdated-plugins"
 
 # Fix GTK+ applicaitons ignoring ~/.XCompose.
 export GTK_IM_MODULE=xim
