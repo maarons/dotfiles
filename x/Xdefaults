@@ -27,7 +27,7 @@ urxvt.color4: #55f
 urxvt.color12: #88f
 ! Remember more lines
 urxvt.saveLines: 1000
-! Don't scroll on tty output
+! Don not scroll on tty output
 urxvt.scrollTtyOutput: false
 urxvt.scrollWithBuffer: true
 urxvt.scrollTtyKeypress: true
