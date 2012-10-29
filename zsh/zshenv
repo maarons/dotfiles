@@ -19,7 +19,6 @@ export PATH=${PATH}:/usr/sbin
 # Force Chrome to use KWallet for storing passwords.  And allow all plugins
 # without warnings.
 export CHROMIUM_USER_FLAGS="--password-store=kwallet --allow-outdated-plugins"
-export CHROME_USER_FLAGS="--allow-outdated-plugins"
 
 # Fix GTK+ applicaitons ignoring ~/.XCompose.
 export GTK_IM_MODULE=xim
