@@ -97,5 +97,12 @@ title
 # Set up RVM.
 [[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"
 
+# Start ssh-agent.
+if [[ -z "`ps -ef | grep ssh-agent | grep -v grep`" ]]; then
+    # No ssh-agent running.
+    ssh-agent > ~/.ssh/agent.sh
+fi
+source ~/.ssh/agent.sh > /dev/null
+
 # Load local configuration.
 [[ -s "${HOME}/.zshlocalrc" ]] && source "${HOME}/.zshlocalrc"
