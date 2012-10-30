@@ -93,6 +93,8 @@ autocmd FileType eruby setlocal shiftwidth=2 softtabstop=2
 autocmd FileType python runtime indent/python.vim
 " set default indentation to 2 spaces for javascript files
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2
+" set default indentation to 2 spaces for php files
+autocmd FileType php setlocal shiftwidth=2 softtabstop=2
 " auto break git commit message lines at 72 characters, also turn on spell
 " checking by default
 autocmd FileType gitcommit setlocal textwidth=72 formatoptions+=t spell spelllang=en_gb
