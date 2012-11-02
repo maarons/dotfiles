@@ -122,13 +122,19 @@ appKeys =
     , ((0, xF86XK_AudioLowerVolume), safeSpawn "pa-control" ["--volume-down"])
 
     -- Media player control.
-    , ((0, xF86XK_AudioNext), safeSpawn "banshee" ["--next"])
-    , ((0, xF86XK_AudioPrev), safeSpawn "banshee" ["--restart-or-previous"])
-    , ((0, xF86XK_AudioStop), safeSpawn "banshee" ["--stop"])
-    , ((0, xF86XK_AudioPlay), safeSpawn "banshee" ["--toggle-playing"])
+    -- , ((0, xF86XK_AudioNext), safeSpawn "banshee" ["--next"])
+    -- , ((0, xF86XK_AudioPrev), safeSpawn "banshee" ["--restart-or-previous"])
+    -- , ((0, xF86XK_AudioStop), safeSpawn "banshee" ["--stop"])
+    -- , ((0, xF86XK_AudioPlay), safeSpawn "banshee" ["--toggle-playing"])
 
     -- Display lock.
     , ((0, xF86XK_Sleep), safeSpawn "shade" ["--sleep", "lock"])
+    , ((0, xF86XK_Calculator), safeSpawn "shade" ["--sleep", "lock"])
+
+    -- Change displays.
+    , ((0, xF86XK_Launch5), safeSpawn "shade" ["--display", "laptop"])
+    , ((0, xF86XK_Launch6), safeSpawn "shade" ["--display", "office"])
+    , ((0, xF86XK_Launch6), safeSpawn "shade" ["--display", "home"])
 
     -- Show/hide app tray.
     , ((modKey, xK_r), unsafeSpawn "~/.xmonad/scripts/tray-toggle.sh")
