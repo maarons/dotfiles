@@ -102,6 +102,8 @@ autocmd FileType gitcommit setlocal textwidth=72 formatoptions+=t spell spelllan
 autocmd FileType markdown setlocal spell spelllang=en_gb
 " .md files are markdown files, not modula2
 autocmd BufNewFile,BufRead *.md set filetype=markdown
+" treat .json files as javascript to get syntax highlighting
+autocmd BufNewFile,BufRead *.json set filetype=javascript
 
 " set keys for FuzzyFinder
 nnoremap <Leader>fb <Esc>:FufBuffer<CR>
