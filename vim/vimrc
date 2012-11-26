@@ -85,9 +85,9 @@ set viminfo=
 set completeopt=longest,menuone
 
 " enable indentation for Ruby files
-autocmd FileType ruby source ~/.vim/bundle/ruby/indent/ruby.vim
+autocmd FileType ruby source ~/.vim/bundle/vim-ruby/indent/ruby.vim
 autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2
-autocmd FileType eruby source ~/.vim/bundle/ruby/indent/eruby.vim
+autocmd FileType eruby source ~/.vim/bundle/vim-ruby/indent/eruby.vim
 autocmd FileType eruby setlocal shiftwidth=2 softtabstop=2
 " enable indentation for Python files
 autocmd FileType python runtime indent/python.vim

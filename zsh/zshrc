@@ -98,8 +98,10 @@ title
 [[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"
 
 # Start ssh-agent.
-if [[ -z "`ps -ef | grep ssh-agent | grep -v grep`" ]]; then
+if [[ -z "`ps -f -u ${USER} -U ${USER} | grep ssh-agent | grep -v grep`" ]]; then
     # No ssh-agent running.
+    mkdir -p ~/.ssh
+    chmod 0700 ~/.ssh
     ssh-agent > ~/.ssh/agent.sh
 fi
 source ~/.ssh/agent.sh > /dev/null
