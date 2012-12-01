@@ -135,6 +135,7 @@ appKeys =
     , ((0, xF86XK_Launch5), safeSpawn "shade" ["--display", "laptop"])
     , ((0, xF86XK_Launch6), safeSpawn "shade" ["--display", "office"])
     , ((0, xF86XK_Launch7), safeSpawn "shade" ["--display", "home"])
+    , ((0, xF86XK_Launch8), safeSpawn "shade" ["--display", "movie"])
 
     -- Show/hide app tray.
     , ((modKey, xK_r), unsafeSpawn "~/.xmonad/scripts/tray-toggle.sh")
