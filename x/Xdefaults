@@ -13,6 +13,9 @@ Xft.hinting: true
 Xft.antialias: true
 Xft.rgba: rgb
 
+! Make fonts behave consistently between different monitor DPIs.
+Xft.dpi: 96
+
 ! Set a nice font
 urxvt.font: xft:Droid Sans Mono:size=11
 ! Do not show scrollbar
