@@ -18,6 +18,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
+import XMonad.Layout.Gaps
 import XMonad.Layout.FixedColumn
 import XMonad.Layout.LayoutModifier
 import XMonad.Layout.Magnifier hiding (Toggle)
@@ -88,7 +89,7 @@ main = do
 
 -- avoidStruts will leave space for panels.
 -- smartBorders won't display borders around full screen windows, etc.
-myLayoutHook = avoidStruts $ smartBorders
+myLayoutHook = gaps [(U, 20)] $ avoidStruts $ smartBorders
     -- 1 window in the master pane, resize by 20 columns, master pane is 80
     -- columns wide, 10 is used as column width if it can't be detected.
     (   mkToggle (single MAGNIFY) (FixedColumn 1 20 80 10)
