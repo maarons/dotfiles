@@ -8,9 +8,7 @@ feel free to salvage whatever you want.
 
     git clone git://github.com/maarons/dotfiles.git ~/.dotfiles
     cd ~/.dotfiles
-    ./build.py
-    git submodule init
-    git submodule update
+    ./update.sh
 
 The build script will not remove any configuration files you already have (but
 it will remove symlinks).  Upon successful execution it will not generate any
