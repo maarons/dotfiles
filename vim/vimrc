@@ -105,10 +105,9 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 " treat .json files as javascript to get syntax highlighting
 autocmd BufNewFile,BufRead *.json set filetype=javascript
 
-" set keys for FuzzyFinder
-nnoremap <Leader>fb <Esc>:FufBuffer<CR>
-nnoremap <Leader>ff <Esc>:FufFile<CR>
-nnoremap <Leader>fl <Esc>:FufLine<CR>
+" set keys for Command-T
+nnoremap <Leader>t <Esc>:CommandT<CR>
+nnoremap <Leader>b <Esc>:CommandTBuffer<CR>
 
 " delete trailing spaces
 nnoremap <F1> :%s/\s\+$//e<CR>
