@@ -102,9 +102,9 @@ if [[ -z "`ps -f -u ${USER} -U ${USER} | grep ssh-agent | grep -v grep`" ]]; the
     # No ssh-agent running.
     mkdir -p ~/.ssh
     chmod 0700 ~/.ssh
-    ssh-agent > ~/.ssh/agent.sh
+    ssh-agent > ~/.ssh/`hostname -f`-agent.sh
 fi
-source ~/.ssh/agent.sh > /dev/null
+source ~/.ssh/`hostname -f`-agent.sh > /dev/null
 
 # Load local configuration.
 [[ -s "${HOME}/.zshlocalrc" ]] && source "${HOME}/.zshlocalrc"
