@@ -1,0 +1,51 @@
+# php.snippets
+# The author disclaims copyright to this source code. It is placed in
+# the public domain. In case this is not legally possible I grant anyone
+# the right to use it for any purpose, without any conditions, unless
+# such conditions are required by law.
+
+snippet fore "" b
+foreach (${1:$container} as ${2:$i}) {
+	${3}
+}
+endsnippet
+
+snippet forem "" b
+foreach (${1:$container} as ${2:$key} => ${3:$value}) {
+	${4}
+}
+endsnippet
+
+snippet /** "" b
+/**
+ * ${1}
+ **/
+endsnippet
+
+snippet fun "" b
+function ${1:name}(${2}) {
+	${3}
+}
+endsnippet
+
+snippet funm "" b
+${1:public} function ${2:name}(${3}) {
+	${4}
+}
+endsnippet
+
+snippet cls "" b
+class ${1:name} {
+	${2}
+}
+endsnippet
+
+snippet __c "" b
+public function __construct(${1}) {
+	${2}
+}
+endsnippet
+
+snippet $t "" w
+$this->${1}
+endsnippet

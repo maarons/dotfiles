@@ -105,9 +105,17 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 " treat .json files as javascript to get syntax highlighting
 autocmd BufNewFile,BufRead *.json set filetype=javascript
 
-" set keys for Command-T
-nnoremap <Leader>t <Esc>:CommandT<CR>
-nnoremap <Leader>b <Esc>:CommandTBuffer<CR>
+" set keys for NERDTree
+nnoremap <Leader>f <Esc>:NERDTreeToggle<CR>
+" close NERDTree after opening a file
+let NERDTreeQuitOnOpen = 1
+
+" load snippets from a custom dir
+let g:UltiSnipsSnippetDirectories=["snippets"]
+
+nnoremap <Leader>d <Esc>:Bufferlist<CR>
+" disable in buffet window key mappings
+let g:buffetdisabledefaultmaps = 1
 
 " delete trailing spaces
 nnoremap <F1> :%s/\s\+$//e<CR>

@@ -1,0 +1,26 @@
+# python.snippets
+# The author disclaims copyright to this source code. It is placed in
+# the public domain. In case this is not legally possible I grant anyone
+# the right to use it for any purpose, without any conditions, unless
+# such conditions are required by law.
+
+snippet for "" b
+for ${1:i} in ${2:container}:
+	${3:pass}
+endsnippet
+
+snippet def "" b
+def ${1:function}(${2}):
+	${3:pass}
+endsnippet
+
+snippet defs "" b
+def ${1:method}(self${2}):
+	${3:pass}
+endsnippet
+
+snippet cls "" b
+class ${1:name}(${2}):
+	def __init__(self${3}):
+		${4:pass}
+endsnippet
