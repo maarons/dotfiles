@@ -46,7 +46,7 @@ function bluetooth_connect {
         echo 'Already connected'
         return
     fi
-    echo $RET | grep 'ConnectionAttemptFailed' &> /dev/null
+    echo $RET | grep 'Error' &> /dev/null
     if [[ $? -eq 0 ]]; then
         echo 'Failed to pair'
         return
