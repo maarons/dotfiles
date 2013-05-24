@@ -7,13 +7,13 @@
 function __bluetooth_find_device {
     DEVICE=''
     if [[ -f ~/.bluetooth_devices ]]; then
-        DEVICES=`cat ~/.bluetooth_devices | tr ' ' '_' | tr '\n' ' '`
-        for DEV in $DEVICES; do
-            echo $DEV | grep "_$1" &> /dev/null
+        DEVICES=`cat ~/.bluetooth_devices`
+        while read -r DEV; do
+            echo $DEV | grep " ${1}$" &> /dev/null
             if [[ $? -eq 0 ]]; then
-                DEVICE=`echo $DEV | sed -e 's/_.*$//'`
+                DEVICE=`echo $DEV | sed -e 's/ .*$//'`
             fi
-        done
+        done <<< "$DEVICES"
     fi
 }
 
