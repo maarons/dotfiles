@@ -106,7 +106,5 @@ if [[ -z "`ps -f -u ${USER} -U ${USER} | grep ssh-agent | grep -v grep`" ]]; the
 fi
 source ~/.ssh/`hostname -f`-agent.sh > /dev/null
 
-source ~/.zsh/bluetooth.sh
-
 # Load local configuration.
 [[ -s "${HOME}/.zshlocalrc" ]] && source "${HOME}/.zshlocalrc"

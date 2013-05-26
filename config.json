@@ -25,7 +25,6 @@
       "~/.zprofile"
     ],
     "zsh/zshenv": "~/.zshenv",
-    "zsh": "~/.zsh",
     "emacs/": "~/.emacs_conf",
     "emacs/tmp/": "~/.emacs_tmp",
     "emacs/emacs": "~/.emacs",
