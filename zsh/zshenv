@@ -8,7 +8,7 @@ export EDITOR='/usr/bin/vim'
 export PAGER='/usr/bin/less'
 export BROWSER='/usr/bin/firefox'
 
-export LANG='en_GB.UTF-8'
+export LANG='en_US.UTF-8'
 
 # SDL should use Pulse Audio.
 export SDL_AUDIODRIVER=pulse

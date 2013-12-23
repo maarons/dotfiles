@@ -13,5 +13,5 @@
   (longlines-mode)
   (longlines-show-hard-newlines)
   (flyspell-mode)
-  (ispell-change-dictionary "en_GB")
+  (ispell-change-dictionary "en_US")
   (flyspell-buffer))
