@@ -111,7 +111,8 @@ let NERDTreeQuitOnOpen = 1
 " load snippets from a custom dir
 let g:UltiSnipsSnippetDirectories=["snippets"]
 
-nnoremap <Leader>d <Esc>:Bufferlist<CR>
+" Gj will put the cursor on second line (last used buffer)
+nnoremap <Leader>d <Esc>:Bufferlist<CR>Gj
 " disable in buffet window key mappings
 let g:buffetdisabledefaultmaps = 1
 
