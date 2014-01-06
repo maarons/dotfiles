@@ -5,6 +5,7 @@
 # such conditions are required by law.
 
 vbell off
+bell_msg ""
 defscrollback 10000
 # C-a conflicts with GNU Readline, change it to C-o.
 escape ^Oo
