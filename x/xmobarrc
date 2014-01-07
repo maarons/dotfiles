@@ -8,10 +8,10 @@ Config
         , Run Memory ["-t", "Mem: <used>/<total>M"] 50
         , Run Swap ["-t" , "Swap: <used>/<total>M"] 50
         , Run Battery ["-t", "Batt: <left>%"] 50
-        , Run Com "uptime | sed -e 's/^.*load average: //' -e 's/,//g'" [] "cpuload" 50
+        , Run Com "cut" ["-d", " ", "-f", "1-3", "/proc/loadavg"] "cpuload" 50
         , Run StdinReader
         ]
     , persistent = True
     , border = NoBorder
-    , template = "%StdinReader% }{ | Cpu: %cpuload% | %memory% | %swap% | %battery% | <fc=yellow,black>%date%</fc>"
+    , template = "%StdinReader% }{ | Load: %cpuload% | %memory% | %swap% | %battery% | <fc=yellow,black>%date%</fc>"
     }
