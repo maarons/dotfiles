@@ -1,6 +1,7 @@
 {
   "mkdir": [
-    "~/.config/gtk-3.0"
+    "~/.config/gtk-3.0",
+    "~/.config/dunst"
   ],
   "chmod": {
     "emacs/tmp": "0700",
@@ -20,6 +21,7 @@
     "x/xscreensaver": "~/.xscreensaver",
     "x/XCompose": "~/.XCompose",
     "x/xsession": "~/.xsession",
+    "x/dunstrc": "~/.config/dunst/dunstrc",
     "zsh/zshrc": [
       "~/.zshrc",
       "~/.zprofile"
