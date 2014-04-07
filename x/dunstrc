@@ -1,0 +1,43 @@
+# dunstrc
+# The author disclaims copyright to this source code. It is placed in
+# the public domain. In case this is not legally possible I grant anyone
+# the right to use it for any purpose, without any conditions, unless
+# such conditions are required by law.
+
+[global]
+    font = DejaVu Sans 11
+    allow_markup = yes
+    format = "<u>%a</u>\n<b>%s</b>\n\n%b"
+    sort = false
+    indicate_hidden = yes
+    alignment = left
+    show_age_threshold = -1
+    word_wrap = yes
+    ignore_newline = no
+
+    geometry = "500x3-20+20"
+    transparency = 0
+    separator_height = 2
+    padding = 15
+    horizontal_padding = 15
+
+    follow = keyboard
+
+[frame]
+    width = 1
+    color = "#e9eaed"
+
+[urgency_low]
+    background = "#141823"
+    foreground = "#e9eaed"
+    timeout = 10
+
+[urgency_normal]
+    background = "#141823"
+    foreground = "#e9eaed"
+    timeout = 10
+
+[urgency_critical]
+    background = "#141823"
+    foreground = "#e9eaed"
+    timeout = 30
