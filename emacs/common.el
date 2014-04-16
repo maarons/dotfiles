@@ -8,6 +8,8 @@
 (setq inhibit-startup-message t)
 ;; Disable toolbar
 (tool-bar-mode 0)
+;; Disable menubar in cli
+(unless window-system (menu-bar-mode 0))
 ;; Don't wrap long lines
 (setq-default truncate-lines t)
 ;; Highlight matching parentheses
