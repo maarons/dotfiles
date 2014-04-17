@@ -1,12 +1,9 @@
-;emacs
+;sh.el
 ;The author disclaims copyright to this source code. It is placed in
 ;the public domain. In case this is not legally possible I grant anyone
 ;the right to use it for any purpose, without any conditions, unless
 ;such conditions are required by law.
 
-(load-file "~/.emacs_conf/common.el")
-(load-file "~/.emacs_conf/lisp.el")
-(load-file "~/.emacs_conf/tex.el")
-(load-file "~/.emacs_conf/text.el")
-(load-file "~/.emacs_conf/sh.el")
-(load-file "~/.emacs_conf/skeletons.el")
+;; Loads sh-mode-map definition.
+(require 'sh-script)
+(define-key sh-mode-map (kbd "TAB") 'tab-to-tab-stop)
