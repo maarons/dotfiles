@@ -5,10 +5,7 @@
 ;such conditions are required by law.
 
 (load-file "~/.emacs_conf/common.el")
-(load-file "~/.emacs_conf/cc.el")
-(load-file "~/.emacs_conf/html.el")
-(load-file "~/.emacs_conf/javascript.el")
 (load-file "~/.emacs_conf/lisp.el")
-(load-file "~/.emacs_conf/skeletons.el")
 (load-file "~/.emacs_conf/tex.el")
 (load-file "~/.emacs_conf/text.el")
+(load-file "~/.emacs_conf/skeletons.el")

@@ -32,15 +32,21 @@
 (setq-default indent-tabs-mode nil)
 ;; Set tab display to 8
 (setq-default tab-width 8)
-;; Tab stops for M-i command
-(setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80))
+;; Tab stops for tab-to-tab-stop and M-i command
+(defun set-tab-stop-width (width)
+  ;; n = number
+  (interactive "nSet tab stop width to: ")
+  (setq tab-stop-list (number-sequence width 120 width)))
+(set-tab-stop-width 4)
+;; Keep indentation level on RET
+(global-set-key (kbd "RET") 'newline-and-indent)
 ;; Default auto fill 80 columns
 (setq-default fill-column 80)
 ;; Require new line at the end of file
 (setq require-final-newline t)
 ;; Set text mode as default
 (setq default-major-mode 'text-mode)
-;; Set dark background colour (requires color-theme package)
+;; Set dark background color (requires color-theme package)
 (when (require 'color-theme nil t)
   (color-theme-initialize)
   (color-theme-billw))
