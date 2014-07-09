@@ -1,6 +1,3 @@
-{-# LANGUAGE TypeSynonymInstances, MultiParamTypeClasses, DeriveDataTypeable #-}
--- Needed by MultiToggle.
-
 import Control.Monad
 import Data.Char
 import Data.List
@@ -20,9 +17,6 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.Gaps
 import XMonad.Layout.FixedColumn
-import XMonad.Layout.LayoutModifier
-import XMonad.Layout.Magnifier hiding (Toggle)
-import XMonad.Layout.MultiToggle
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Tabbed
 import XMonad.Layout
@@ -30,10 +24,6 @@ import XMonad.Util.EZConfig
 import XMonad.Util.Run
 import XMonad.Util.WorkspaceCompare
 import qualified XMonad.StackSet as W
-
-data MAGNIFY = MAGNIFY deriving (Read, Show, Eq, Typeable)
-instance Transformer MAGNIFY Window where
-      transform _ x k = k (magnifier' x) (\(ModifiedLayout _ x) -> x)
 
 main = do
     -- List of displays as numbers ([1..]).
@@ -90,10 +80,7 @@ main = do
 -- avoidStruts will leave space for panels.
 -- smartBorders won't display borders around full screen windows, etc.
 myLayoutHook = gaps [(U, 20)] $ avoidStruts $ smartBorders
-    -- 1 window in the master pane, resize by 20 columns, master pane is 80
-    -- columns wide, 10 is used as column width if it can't be detected.
-    (   mkToggle (single MAGNIFY) (FixedColumn 1 20 80 10)
-    ||| Tall 1 0.03 0.5
+    (   Tall 1 0.03 0.5
     ||| simpleTabbed
     )
 
@@ -166,7 +153,6 @@ launchKeys conf =
 
 layoutKeys =
     [ ((modKey, xK_n), sendMessage NextLayout)
-    , ((modKey, xK_b), sendMessage $ Toggle MAGNIFY)
     ]
 
 focusKeys =
