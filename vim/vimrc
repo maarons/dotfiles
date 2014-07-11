@@ -109,7 +109,7 @@ nnoremap <Leader>f <Esc>:NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
 
 " load snippets from a custom dir
-let g:UltiSnipsSnippetDirectories=["snippets"]
+let g:UltiSnipsSnippetDirectories=["ultisnips_snippets"]
 
 " Gj will put the cursor on second line (last used buffer)
 nnoremap <Leader>d <Esc>:Bufferlist<CR>Gj
