@@ -6,6 +6,7 @@ import System.Exit
 import qualified Data.Map as M
 
 import Graphics.X11.ExtraTypes
+import Graphics.X11.Types
 import Graphics.X11.Xinerama
 import Graphics.X11.Xlib
 
@@ -118,6 +119,7 @@ appKeys =
     -- Display lock.
     , ((0, xF86XK_Sleep), safeSpawn "shade" ["sleep", "lock"])
     , ((0, xF86XK_Calculator), safeSpawn "shade" ["sleep", "lock"])
+    , ((0, xK_KP_Home), safeSpawn "shade" ["sleep", "lock"])
 
     -- Change displays.
     , ((0, xF86XK_Launch5), safeSpawn "shade" ["display", "laptop"])
