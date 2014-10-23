@@ -16,11 +16,11 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
+import XMonad.Layout
 import XMonad.Layout.Gaps
-import XMonad.Layout.FixedColumn
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Tabbed
-import XMonad.Layout
+import XMonad.Layout.ThreeColumns
 import XMonad.Util.EZConfig
 import XMonad.Util.Run
 import XMonad.Util.WorkspaceCompare
@@ -82,6 +82,7 @@ main = do
 -- smartBorders won't display borders around full screen windows, etc.
 myLayoutHook = gaps [(U, 20)] $ avoidStruts $ smartBorders
     (   Tall 1 0.03 0.5
+    ||| ThreeCol 1 0.03 (1/3)
     ||| simpleTabbed
     )
 
