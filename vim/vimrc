@@ -84,6 +84,11 @@ set viminfo=
 " make omnicompletion popup show most matching strings
 set completeopt=longest,menuone
 
+" prevent accidental exits, only `:quit` will exit vim
+cabbrev q <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'close' : 'q')<CR>
+cabbrev wq <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'write' : 'wq')<CR>
+cabbrev wqa <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'wall' : 'wqa')<CR>
+
 " enable indentation for Ruby files
 autocmd FileType ruby runtime indent/ruby.vim
 autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2
