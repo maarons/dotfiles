@@ -55,3 +55,7 @@
   (setq uniquify-buffer-name-style 'post-forward))
 ;; Set default font
 (add-to-list 'default-frame-alist '(font . "Droid Sans Mono-11"))
+
+(if (eq system-type 'darwin)
+  ;; Swap command and option keys
+  (setq mac-command-modifier 'meta))
