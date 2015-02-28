@@ -13,3 +13,6 @@
 [submodule "vim/bundle/buffet"]
 	path = vim/bundle/buffet
 	url = git://github.com/sandeepcr529/Buffet.vim.git
+[submodule "vim/bundle/vim-hack"]
+	path = vim/bundle/vim-hack
+	url = git://github.com/hhvm/vim-hack.git

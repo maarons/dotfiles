@@ -121,6 +121,9 @@ nnoremap <Leader>d <Esc>:Bufferlist<CR>Gj
 " disable in buffet window key mappings
 let g:buffetdisabledefaultmaps = 1
 
+" Disable running Hack typechecker on file save
+let hack#enable = 0
+
 " delete trailing spaces
 nnoremap <F1> :%s/\s\+$//e<CR>
 " set indent to two spaces
@@ -131,3 +134,5 @@ nnoremap <F3> :setlocal shiftwidth=4<CR>:setlocal softtabstop=4<CR>
 nnoremap <F4> :setlocal spell spelllang=en_us<CR>
 " show undo history
 nnoremap <F5> :GundoToggle<CR>
+" trigger omnicomplete
+inoremap <c-x>n <c-x><c-o>
