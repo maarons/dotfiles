@@ -30,8 +30,8 @@
     "emacs/": "~/.emacs_conf",
     "emacs/tmp/": "~/.emacs_tmp",
     "emacs/emacs": "~/.emacs",
-    "vim/": "~/.vim",
-    "vim/vimrc": "~/.vimrc",
+    "vim/": ["~/.vim", "~/.nvim"],
+    "vim/vimrc": ["~/.vimrc", "~/.nvimrc"],
     "vim/gvimrc": "~/.gvimrc",
     "x/xmonad/": "~/.xmonad",
     "x/xmobarrc": "~/.xmobarrc"
