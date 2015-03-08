@@ -11,11 +11,11 @@ set nocompatible
 call pathogen#helptags()
 call pathogen#infect()
 
-" avoid unexpected switches to 256 colours in some terminals (xterm, urxvt)
+" avoid unexpected switches to 256 colors in some terminals (xterm, urxvt)
 set term=screen
 " turn syntax highlight on
 syntax on
-" use light colours
+" use light colors
 set background=dark
 " directory for swap files
 set directory=~/.vim/tmp
@@ -76,7 +76,7 @@ set wildmode=list:longest
 " highlight tabs and trailing spaces
 set listchars=tab:>-,trail:-
 set list
-" search highlight with custom colour (more visible than default)
+" search highlight with custom color (more visible than default)
 set hlsearch
 hi search ctermfg=cyan ctermbg=blue
 " disable viminfo
