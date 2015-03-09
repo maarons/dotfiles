@@ -19,6 +19,9 @@ export PATH=${PATH}:/usr/sbin
 # Force Chrome to allow all plugins without warnings.
 export CHROMIUM_USER_FLAGS="--allow-outdated-plugins"
 
+# Use flash plugin from Chrome
+export CHROMIUM_USER_FLAGS="${CHROMIUM_USER_FLAGS} --ppapi-flash-path=/opt/google/chrome/PepperFlash/libpepflashplayer.so"
+
 # Fix GTK+ applicaitons ignoring ~/.XCompose.
 export GTK_IM_MODULE=xim
 
