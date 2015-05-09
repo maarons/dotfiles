@@ -17,7 +17,7 @@
     "mozplugger/": "~/.mozplugger",
     "ruby/gemrc": "~/.gemrc",
     "ruby/irbrc": "~/.irbrc",
-    "x/Xdefaults": "~/.Xdefaults",
+    "x/Xresources": "~/.Xresources",
     "x/xscreensaver": "~/.xscreensaver",
     "x/XCompose": "~/.XCompose",
     "x/xsession": "~/.xsession",
