@@ -11,8 +11,6 @@ set nocompatible
 call pathogen#helptags()
 call pathogen#infect()
 
-" avoid unexpected switches to 256 colors in some terminals (xterm, urxvt)
-set term=screen
 " turn syntax highlight on
 syntax on
 " use light colors
@@ -76,13 +74,17 @@ set wildmode=list:longest
 " highlight tabs and trailing spaces
 set listchars=tab:>-,trail:-
 set list
-" search highlight with custom color (more visible than default)
+" search highlight
 set hlsearch
-hi search ctermfg=cyan ctermbg=blue
 " disable viminfo
 set viminfo=
 " make omnicompletion popup show most matching strings
 set completeopt=longest,menuone
+
+" Use terminal colors, 256 colors don't look good on either the default or black
+" background.
+let g:gruvbox_termcolors=16
+colorscheme gruvbox
 
 " prevent accidental exits, only `:quit` will exit vim
 cabbrev q <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'close' : 'q')<CR>

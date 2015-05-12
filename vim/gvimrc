@@ -5,10 +5,11 @@
 " such conditions are required by law.
 
 set guifont=Droid\ Sans\ Mono\ 11
-set background=light
 " remove menu bar
 set guioptions-=m
 " remove toolbar
 set guioptions-=T
 " use vim style popup dialogs
 set guioptions+=c
+
+colorscheme molokai
