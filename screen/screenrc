@@ -6,7 +6,7 @@
 
 vbell off
 bell_msg ""
-defscrollback 10000
+defscrollback 100000
 # C-a conflicts with GNU Readline, change it to C-o.
 escape ^Oo
 startup_message off

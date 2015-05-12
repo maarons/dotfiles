@@ -1,4 +1,4 @@
-! Xdefaults
+! Xresources
 ! The author disclaims copyright to this source code. It is placed in
 ! the public domain. In case this is not legally possible I grant anyone
 ! the right to use it for any purpose, without any conditions, unless
@@ -18,19 +18,45 @@ Xft.dpi: 96
 
 ! Set a nice font
 urxvt.font: xft:Droid Sans Mono:size=11
+urxvt.boldFont: xft:Droid Sans Mono:size=11
 ! Do not show scrollbar
 urxvt.scrollBar: false
-! Set dark background colour
-urxvt.background: black
-urxvt.foreground: white
-! Set visible cursor colour
+! Set visible cursor color
 urxvt.cursorColor: white
-! Make blue colour a little lighter
-urxvt.color4: #55f
-urxvt.color12: #88f
 ! Remember more lines
 urxvt.saveLines: 1000
-! Don not scroll on tty output
+! Do not scroll on tty output
 urxvt.scrollTtyOutput: false
 urxvt.scrollWithBuffer: true
 urxvt.scrollTtyKeypress: true
+
+! Default xterm colors
+! Use `xtermcontrol --get-colorX` to read them from a running terminal.
+urxvt.background: black
+urxvt.foreground: white
+! Black
+urxvt.color0:  #000000
+urxvt.color8:  #7f7f7f
+! Red
+urxvt.color1:  #cd0000
+urxvt.color9:  #ff0000
+! Green
+urxvt.color2:  #00cd00
+urxvt.color10: #00ff00
+! Yellow
+urxvt.color3:  #cdcd00
+urxvt.color11: #ffff00
+! Blue
+urxvt.color4:  #0000ee
+! Override the default with a lighter color
+! urxvt.color12: #5c5cff
+urxvt.color12: #8888ff
+! Magenta
+urxvt.color5:  #cd00cd
+urxvt.color13: #ff00ff
+! Cyan
+urxvt.color6:  #00cdcd
+urxvt.color14: #00ffff
+! Grey
+urxvt.color7:  #e5e5e5
+urxvt.color15: #ffffff
