@@ -78,7 +78,7 @@ setopt extended_glob
 function title () {
     title=$(print -Pn "%~:${LAST_CMD}" | tr -d "\n")
     case ${TERM} in
-    screen)
+    screen*)
         print -Pn "\ek${title}\e\\"
         ;;
     xterm|rxvt*)

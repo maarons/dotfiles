@@ -4,6 +4,9 @@
 # the right to use it for any purpose, without any conditions, unless
 # such conditions are required by law.
 
+# Tell apps running inside screen that they can use 256 colors.
+term screen-256color
+
 vbell off
 bell_msg ""
 defscrollback 100000
