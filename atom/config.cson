@@ -1,4 +1,4 @@
-"global":
+"*":
   welcome:
     showOnStartup: false
   core:
@@ -9,13 +9,11 @@
     ]
   editor:
     invisibles: {}
-    fontFamily: "Droid Sans Mono"
     tabLength: 2
     softWrap: false
-    fontSize: 14
+    fontFamily: "Droid Sans Mono"
   "exception-reporting":
     userId: "b8b4ac5f-3da2-f708-6664-9aeec26f1051"
-
 "source.python":
   editor:
     tabLength: 4
