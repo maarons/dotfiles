@@ -1,0 +1,10 @@
+"*":
+  welcome:
+    showOnStartup: false
+  core:
+    audioBeep: false
+  editor:
+    invisibles: {}
+    fontFamily: "Droid Sans Mono"
+  "exception-reporting":
+    userId: "b8b4ac5f-3da2-f708-6664-9aeec26f1051"
