@@ -34,6 +34,7 @@
     "vim/": ["~/.vim", "~/.nvim"],
     "vim/vimrc": ["~/.vimrc", "~/.nvimrc"],
     "vim/gvimrc": "~/.gvimrc",
+    "VSCode/settings.json": "~/.config/Code/User/settings.json",
     "x/xmonad/": "~/.xmonad",
     "x/xmobarrc": "~/.xmobarrc"
   }
