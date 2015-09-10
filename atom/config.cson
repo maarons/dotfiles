@@ -11,9 +11,13 @@
     invisibles: {}
     tabLength: 2
     softWrap: false
-    fontFamily: "Droid Sans Mono"
+    fontFamily: "Hack"
   "exception-reporting":
     userId: "b8b4ac5f-3da2-f708-6664-9aeec26f1051"
+  "file-watcher":
+    promptWhenFileHasChangedOnDisk: false
+  nuclide:
+    remoteProjectsConfig: []
 "source.python":
   editor:
     tabLength: 4
