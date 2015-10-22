@@ -7,7 +7,13 @@ Config
         [ Run Date "%m/%d/%Y %H:%M" "date" 10
         , Run Memory ["-t", "Mem: <used>/<total>M"] 50
         , Run Swap ["-t" , "Swap: <used>/<total>M"] 50
-        , Run Battery ["-t", "Batt: <left>%"] 50
+        , Run Battery
+            [ "-t", "Batt: <acstatus><left>%"
+            , "--"
+            , "-O", "⚡"
+            , "-i", "⚡"
+            , "-o", ""
+            ] 50
         , Run Com "cut" ["-d", " ", "-f", "1-3", "/proc/loadavg"] "cpuload" 50
         , Run StdinReader
         ]
