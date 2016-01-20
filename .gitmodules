@@ -22,3 +22,6 @@
 [submodule "vim/bundle/gruvbox"]
 	path = vim/bundle/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
+[submodule "vim/bundle/vim-flow"]
+	path = vim/bundle/vim-flow
+	url = https://github.com/flowtype/vim-flow.git
