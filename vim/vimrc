@@ -125,6 +125,8 @@ let g:buffetdisabledefaultmaps = 1
 
 " Disable running Hack typechecker on file save
 let hack#enable = 0
+" Same for flow
+let g:flow#enable = 0
 
 " delete trailing spaces
 nnoremap <F1> :%s/\s\+$//e<CR>
