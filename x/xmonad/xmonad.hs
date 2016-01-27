@@ -11,7 +11,6 @@ import Graphics.X11.Xinerama
 import Graphics.X11.Xlib
 
 import XMonad
-import XMonad.Actions.CycleRecentWS
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
@@ -24,6 +23,7 @@ import XMonad.Layout.ThreeColumns
 import XMonad.Util.EZConfig
 import XMonad.Util.Run
 import XMonad.Util.WorkspaceCompare
+import qualified XMonad.Actions.CycleWS as CycleWS
 import qualified XMonad.StackSet as W
 
 main = do
@@ -213,7 +213,7 @@ workspaceKeys =
     [ ((modKey .|. shiftMask, fKey), windows $ W.shift wSpace)
     | (wSpace, fKey) <- zip myWorkspaces [xK_F1..xK_F12]
     ] ++
-    [ ((modKey, xK_Tab), cycleRecentWS [xK_Super_L] xK_Tab xK_grave)
+    [ ((modKey, xK_Tab), CycleWS.toggleWS)
     ]
 
 getDisplays = do
