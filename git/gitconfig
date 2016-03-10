@@ -1,4 +1,4 @@
-[include]
-    path = ~/.gitlocalconfig
 [push]
     default = simple
+[include]
+    path = ~/.gitlocalconfig

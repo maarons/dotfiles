@@ -1,5 +1,5 @@
-%include ~/.hglocalrc
-
 [extensions]
 hgext.bookmarks =
 hggit =
+
+%include ~/.hglocalrc
