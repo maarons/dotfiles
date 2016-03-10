@@ -1,0 +1,4 @@
+[include]
+    path = ~/.gitlocalconfig
+[push]
+    default = simple
