@@ -105,7 +105,7 @@ title
 SSH_AGENT_PGREP_OUTPUT=$(pgrep -U "${USER}" -u "${USER}" -x ssh-agent)
 ORIG_IFS=${IFS}
 IFS=$'\n'
-SSH_AGENT_PIDS=(SSH_AGENT_PGREP_OUTPUT)
+SSH_AGENT_PIDS=(${SSH_AGENT_PGREP_OUTPUT})
 IFS=${ORIG_IFS}
 SSH_AGENT_FILE="${HOME}/.ssh/$(hostname -f)-agent.sh"
 mkdir -p "${HOME}/.ssh"
@@ -113,7 +113,7 @@ chmod 0700 "${HOME}/.ssh"
 touch "${SSH_AGENT_FILE}"
 source "${SSH_AGENT_FILE}" > /dev/null
 if [[ ${#SSH_AGENT_PIDS[@]} -ne 1 ]] || \
-   [[ ${SSH_AGENT_PID} -ne ${SSH_AGENT_PIDS[0]} ]]
+   [[ ${SSH_AGENT_PID} != "${SSH_AGENT_PIDS[1]}" ]]
 then
     pkill -U "${USER}" -u "${USER}" -x ssh-agent
     ssh-agent -s > "${SSH_AGENT_FILE}"
