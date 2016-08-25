@@ -102,13 +102,23 @@ title
 [[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"
 
 # Start ssh-agent.
-if [[ -z "`ps -f -u ${USER} -U ${USER} | grep ssh-agent | grep -v grep`" ]]; then
-    # No ssh-agent running.
-    mkdir -p ~/.ssh
-    chmod 0700 ~/.ssh
-    ssh-agent > ~/.ssh/`hostname -f`-agent.sh
+SSH_AGENT_PGREP_OUTPUT=$(pgrep -U "${USER}" -u "${USER}" -x ssh-agent)
+ORIG_IFS=${IFS}
+IFS=$'\n'
+SSH_AGENT_PIDS=(SSH_AGENT_PGREP_OUTPUT)
+IFS=${ORIG_IFS}
+SSH_AGENT_FILE="${HOME}/.ssh/$(hostname -f)-agent.sh"
+mkdir -p "${HOME}/.ssh"
+chmod 0700 "${HOME}/.ssh"
+touch "${SSH_AGENT_FILE}"
+source "${SSH_AGENT_FILE}" > /dev/null
+if [[ ${#SSH_AGENT_PIDS[@]} -ne 1 ]] || \
+   [[ ${SSH_AGENT_PID} -ne ${SSH_AGENT_PIDS[0]} ]]
+then
+    pkill -U "${USER}" -u "${USER}" -x ssh-agent
+    ssh-agent -s > "${SSH_AGENT_FILE}"
+    source "${SSH_AGENT_FILE}" > /dev/null
 fi
-source ~/.ssh/`hostname -f`-agent.sh > /dev/null
 
 # Load local configuration.
 [[ -s "${HOME}/.zshlocalrc" ]] && source "${HOME}/.zshlocalrc"
