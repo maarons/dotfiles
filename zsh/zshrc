@@ -90,17 +90,6 @@ function title () {
     esac
 }
 
-# Set title to last run command.
-preexec () {
-    LAST_CMD="${1}"
-    title
-}
-# Set title for new shells.
-title
-
-# Set up RVM.
-[[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"
-
 function ssh-agent-reload () {
     # Start ssh-agent.
     SSH_AGENT_PGREP_OUTPUT=$(pgrep -U "${USER}" -u "${USER}" -x ssh-agent)
@@ -122,6 +111,18 @@ function ssh-agent-reload () {
     fi
 }
 ssh-agent-reload
+
+# Set title to last run command.
+preexec () {
+    LAST_CMD="${1}"
+    ssh-agent-reload
+    title
+}
+# Set title for new shells.
+title
+
+# Set up RVM.
+[[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"
 
 # Load local configuration.
 [[ -s "${HOME}/.zshlocalrc" ]] && source "${HOME}/.zshlocalrc"
