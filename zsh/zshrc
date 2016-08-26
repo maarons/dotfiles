@@ -93,19 +93,20 @@ function title () {
 function ssh-agent-reload () {
     # Start ssh-agent.
     SSH_AGENT_PGREP_OUTPUT=$(pgrep -U "${USER}" -u "${USER}" -x ssh-agent)
-    ORIG_IFS=${IFS}
-    IFS=$'\n'
-    SSH_AGENT_PIDS=(${SSH_AGENT_PGREP_OUTPUT})
-    IFS=${ORIG_IFS}
+    SSH_AGENT_PIDS=("${(f)SSH_AGENT_PGREP_OUTPUT}")
     SSH_AGENT_FILE="${HOME}/.ssh/$(hostname -f)-agent.sh"
     mkdir -p "${HOME}/.ssh"
     chmod 0700 "${HOME}/.ssh"
     touch "${SSH_AGENT_FILE}"
     source "${SSH_AGENT_FILE}" > /dev/null
-    if [[ ${#SSH_AGENT_PIDS[@]} -ne 1 ]] || \
-       [[ ${SSH_AGENT_PID} != "${SSH_AGENT_PIDS[1]}" ]]
-    then
-        pkill -U "${USER}" -u "${USER}" -x ssh-agent
+    NUM_PIDS=${#SSH_AGENT_PIDS[@]}
+    for PID in ${SSH_AGENT_PIDS[@]}; do
+        if [[ "${SSH_AGENT_PID}" != "${PID}" ]]; then
+            NUM_PIDS=$[${NUM_PIDS} - 1]
+            kill "${PID}"
+        fi
+    done
+    if [[ ${NUM_PIDS} -eq 0 ]]; then
         ssh-agent -s > "${SSH_AGENT_FILE}"
         source "${SSH_AGENT_FILE}" > /dev/null
     fi
