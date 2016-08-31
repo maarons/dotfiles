@@ -92,14 +92,17 @@ function title () {
 
 function ssh-agent-reload () {
     # Start ssh-agent.
-    SSH_AGENT_PGREP_OUTPUT=$(pgrep -U "${USER}" -u "${USER}" -x ssh-agent)
-    SSH_AGENT_PIDS=("${(f)SSH_AGENT_PGREP_OUTPUT}")
-    SSH_AGENT_FILE="${HOME}/.ssh/$(hostname -f)-agent.sh"
+    local PGREP_USER=${USER-$(whoami)}
+    local SSH_AGENT_PGREP_OUTPUT=$(
+        pgrep -U "${PGREP_USER}" -u "${PGREP_USER}" -x ssh-agent
+    )
+    local SSH_AGENT_PIDS=("${(f)SSH_AGENT_PGREP_OUTPUT}")
+    local SSH_AGENT_FILE="${HOME}/.ssh/$(hostname -f)-agent.sh"
     mkdir -p "${HOME}/.ssh"
     chmod 0700 "${HOME}/.ssh"
     touch "${SSH_AGENT_FILE}"
     source "${SSH_AGENT_FILE}" > /dev/null
-    NUM_PIDS=${#SSH_AGENT_PIDS[@]}
+    local NUM_PIDS=${#SSH_AGENT_PIDS[@]}
     for PID in ${SSH_AGENT_PIDS[@]}; do
         if [[ "${SSH_AGENT_PID}" != "${PID}" ]]; then
             NUM_PIDS=$[${NUM_PIDS} - 1]
