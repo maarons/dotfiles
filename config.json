@@ -3,7 +3,8 @@
     "~/.config/gtk-3.0",
     "~/.config/dunst",
     "~/.atom",
-    "~/.config/Code/User"
+    "~/.config/Code/User",
+    "~/.docker"
   ],
   "chmod": {
     "emacs/tmp": "0700",
@@ -12,6 +13,7 @@
   "symlink": {
     "alsa/asoundrc": "~/.asoundrc",
     "atom/config.cson": "~/.atom/config.cson",
+    "docker/config.json": "~/.docker/config.json",
     "mplayer/" : "~/.mplayer",
     "screen/screenrc": "~/.screenrc",
     "git/gitconfig": "~/.gitconfig",
