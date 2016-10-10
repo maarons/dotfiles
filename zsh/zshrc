@@ -96,7 +96,11 @@ function ssh-agent-reload () {
     local SSH_AGENT_PGREP_OUTPUT=$(
         pgrep -U "${PGREP_USER}" -u "${PGREP_USER}" -x ssh-agent
     )
-    local SSH_AGENT_PIDS=("${(f)SSH_AGENT_PGREP_OUTPUT}")
+    if [[ -z "${SSH_AGENT_PGREP_OUTPUT}" ]]; then
+        local SSH_AGENT_PIDS=()
+    else
+        local SSH_AGENT_PIDS=("${(f)SSH_AGENT_PGREP_OUTPUT}")
+    fi
     local SSH_AGENT_FILE="${HOME}/.ssh/$(hostname -f)-agent.sh"
     mkdir -p "${HOME}/.ssh"
     chmod 0700 "${HOME}/.ssh"
