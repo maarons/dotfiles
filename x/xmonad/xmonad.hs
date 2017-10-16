@@ -137,7 +137,7 @@ appKeys =
         , "10"
         , "-i"
         , "-fn"
-        , "DejaVu Sans-10"
+        , "DejaVu Sans Mono-10"
         , "-nb"
         , "#333"
         , "-nf"
