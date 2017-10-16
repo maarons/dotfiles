@@ -8,7 +8,7 @@
 ! https://wiki.archlinux.org/index.php/Font_Configuration#Applications_without_fontconfig_support
 Xft.autohint: false
 Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintfull
+Xft.hintstyle: hintslight
 Xft.hinting: true
 Xft.antialias: true
 Xft.rgba: rgb
@@ -17,8 +17,8 @@ Xft.rgba: rgb
 Xft.dpi: 96
 
 ! Set a nice font
-urxvt.font: xft:Droid Sans Mono:size=11
-urxvt.boldFont: xft:Droid Sans Mono:size=11
+urxvt.font: xft:Fira Code:size=11:style=Medium
+urxvt.boldFont: xft:Fira Code:size=11:style=Medium
 ! Do not show scrollbar
 urxvt.scrollBar: false
 ! Set visible cursor color
