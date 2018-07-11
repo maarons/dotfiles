@@ -4,6 +4,13 @@
 " the right to use it for any purpose, without any conditions, unless
 " such conditions are required by law.
 
+" Workaround for compatibility with py3.7.
+" https://github.com/vim/vim/issues/3117
+" https://github.com/SirVer/ultisnips/issues/996
+if has('python3')
+  silent! python3 1
+endif
+
 " use vim defaults instead of vi ones
 set nocompatible
 
