@@ -78,6 +78,9 @@ unsetopt auto_remove_slash
 # Use extended globbing features.
 setopt extended_glob
 
+# '#' Triggers comments in command line.
+setopt interactivecomments
+
 # Set GNU Screen/urxvt title to #{LAST_CMD}.
 function title () {
     title=$(print -Pn "%~:${LAST_CMD}" | tr -d "\n")
