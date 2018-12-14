@@ -17,8 +17,8 @@ Xft.rgba: rgb
 Xft.dpi: 96
 
 ! Set a nice font
-urxvt.font: xft:Fira Code:size=11:style=Medium
-urxvt.boldFont: xft:Fira Code:size=11:style=Medium
+urxvt.font: xft:Hack:size=11
+urxvt.boldFont: xft:Hack:size=11
 ! Do not show scrollbar
 urxvt.scrollBar: false
 ! Set visible cursor color
