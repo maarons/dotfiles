@@ -54,7 +54,7 @@
 (when (require 'uniquify nil t)
   (setq uniquify-buffer-name-style 'post-forward))
 ;; Set default font
-(add-to-list 'default-frame-alist '(font . "Droid Sans Mono-11"))
+(add-to-list 'default-frame-alist '(font . "Hack-12"))
 
 (if (eq system-type 'darwin)
   ;; Swap command and option keys
